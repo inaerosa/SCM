@@ -12,6 +12,8 @@ module.exports = {
             res.status(500).json(err.message)
         }
     },
-
+    list: (req, res) => {
+        res.status(200).json(payloads)
+    }
 
 }
