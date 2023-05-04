@@ -14,6 +14,10 @@ module.exports = {
     },
     list: (req, res) => {
         res.status(200).json(payloads)
-    }
-
+    },
+    getByUser: (req, res) => {
+	const {user} = req.body;
+	const filtrered = payloads.filter(user => user.user === user);
+	res.status(200).json(filtrered)
+	}
 }
