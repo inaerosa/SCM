@@ -2,9 +2,12 @@ pipeline {
 	agent any
 
 	stages {
-		stage ('Inicial') {
+		stage ('Build image') {
 			steps {
-        echo 'Iniciando a pipeline'
+				script {
+					dockerapp = docker.build('inaerosa/SCM', '-f ./Dockerfile')
+					
+				}
 			}
 		}
 	}
