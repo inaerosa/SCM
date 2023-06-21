@@ -9,7 +9,7 @@ services:
     container_name: jenkins
     volumes:
         - ./:/app
-  
+
   web:
     image: node:16-alpine
     working_dir: /app
