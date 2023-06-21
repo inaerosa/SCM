@@ -8,5 +8,6 @@ pipeline {
                     dockerapp = docker.build("inaerosa/SCM:${env.BUILD_ID}", '-f ./Dockerfile ./') 
                 }                
             }
-	}
+	    }
+    }
 }
