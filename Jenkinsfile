@@ -5,7 +5,7 @@ pipeline {
         stage ('Build Image') {
             steps {
                 script {
-                    dockerapp = docker.build("inaerosa/scm:${env.BUILD_ID}", '-f ./Dockerfile ./') 
+                    dockerapp = docker.build("inaerosaa/scm:${env.BUILD_ID}", '-f ./Dockerfile ./') 
                 }                
             }
 	    }
