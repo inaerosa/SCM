@@ -1,7 +1,9 @@
 const fs = require('fs')
 const payloads = require('../../payloads.json')
-module.exports = {
-    create: (req, res) => {
+
+
+class UserController {
+    static create (req, res){
         const {name, email} = req.body;
         try{
             const user = {name, email}
@@ -11,16 +13,19 @@ module.exports = {
         }catch(err) {
             res.status(500).json(err.message)
         }
-    },
-    list: (req, res) => {
+    }
+
+    static list (req, res){
         res.status(200).json(payloads)
-    },
-    getByUser: (req, res) => {
+    }
+
+    static getByUser (req, res){
 	    const {user} = req.body;
-	    const filtrered = payloads.filter(user => user.user === user);
+	    const filtrered = payloads.filter(user => user.user === name);
     	res.status(200).json(filtrered)
-	},
-    remove: async(req, res) => {
+	}
+    
+    static remove (req, res){
         try{
             const {name} = req.body;
             const indexUser = payloads.findIndex(user => user.user === name)
@@ -31,6 +36,6 @@ module.exports = {
             res.status(500).json(err.message)
         }
     }
-
 }
 
+module.exports = UserController;
