@@ -6,6 +6,7 @@ const router = require('./src/routes/userRoutes')
 app.use(express.json())
 app.use('/api/users', router)
 
-app.listen(process.env.PORT, () => {
-    console.log(`Running at ${process.env.PORT}`)
+app.listen(3000, () => {
+    console.log(`Running at 3000`)
 })
+
