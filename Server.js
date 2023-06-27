@@ -9,3 +9,4 @@ app.use('/api/users', router)
 app.listen(3000, () => {
     console.log(`Running at 3000`)
 })
+
