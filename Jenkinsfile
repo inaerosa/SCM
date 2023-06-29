@@ -23,7 +23,7 @@ pipeline {
 			steps {
 				script {
 					sh 'docker run -d -p 3000:3000 inaerosaa/scm'
-					echo 'Access: http://172.0.0.1:3000'
+					echo 'Access: http://127.0.0.1:3000'
 				}
 			}
 		}
