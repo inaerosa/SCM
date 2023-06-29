@@ -1,0 +1,145 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Swagger API SCM",
+      "description": "Esse é um projeto realizado na cadeira de Sistema de Gerência e Configuração ministrada pelo professor Roger. O objeto consiste na criação de pipelines com execução no Jenkins.",
+      "termsOfService": "http://swagger.io/terms/",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://127.0.0.1:3000"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Usuários",
+        "description": "Operations about user"
+      }
+    ],
+    "paths": {
+      "/api/users": {
+        "get": {
+          "tags": [
+            "Usuários"
+          ],
+          "summary": "Listar usuários",
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "example": "Inaê"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Usuários"
+          ],
+          "summary": "Criar um usuário",
+          "requestBody": {
+            "description": "Optional description in *Markdown*",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "roger"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "roger@email.com"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "example": "roger"
+                      },
+                      "email": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "roger@email.com"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Usuários"
+          ],
+          "summary": "Deletar um usuário",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "roger"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "204": {
+              "description": "Successful operation",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Removido"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
