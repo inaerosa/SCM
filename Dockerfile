@@ -5,4 +5,5 @@ RUN npm install
 COPY . .
 EXPOSE 3000
 RUN npm test
+CMD ["npm", "run", "test"]
 CMD ["node", "Server.js"]
